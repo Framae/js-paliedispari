@@ -2,33 +2,27 @@
 
 // Chiedere all’utente di inserire una parola 
 
-// let parola = parseInt(prompt('Inserisci una parola'))
-// let parolaDivisa;
+
 
 // // Creare una funzione per capire se la parola inserita è palindroma
 
-// function palindroma () {
-//     if (parolaDivisa = parola.split('')) {
-//         alert('la parola è palindroma')
-//     }
-// }
+function checkPalindrome(wordUser) {
+  
+  let comparisonWord = wordUser.split('').reverse().join('');
 
-let parola = parseInt(prompt('Inserisci una parola'));
-let parolaInversa = invertiParola(parola);
-
-if(parola == parolaInversa){
-    alert('la parola è palindroma');
-  } else {
-    alert('la parola non è palindroma');
-}
-
-function invertiParola(stringa){
-  let parolaInversa = parola;
-
-  for (let i = 0; i = stringa.length; i++) {
-    parolaInversa += stringa[i];
-    
+  for (let i = wordUser.lenght - 1; i >= 0; i--) {
+    comparisonWord += wordUser[i];
   }
-
-  return parolaInversa;
+    
+  if (wordUser == comparisonWord) {
+    alert('La parola è palindroma');
+  } else {
+    alert('La parola NON è palindroma');
+  }
+  return;
 }
+
+
+let wordUser = prompt('Inserisci parola');
+let verify = checkPalindrome(wordUser);
+console.log(verify);
